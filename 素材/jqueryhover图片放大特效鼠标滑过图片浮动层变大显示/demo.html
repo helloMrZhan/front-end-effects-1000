@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery图片特效鼠标滑过图片浮动层变大显示</title>
+<meta name="description" content="jquery hover图片特效制作单排图片当鼠标滑过图片时，大图片浮动在小图上方变大显示。jquery下载。" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<style type="text/css">
+body{background:#EEE;font-family:"Trebuchet MS",Verdana,Arial,sans-serif;font-size:14px;line-height:1.6;}
+#content{width:750px;margin:50px auto;padding:20px;background:#FFF;border:1px solid #CCC;}
+#content h1{margin:0;}
+#content hr{border:none;height:1px;line-height:1px;background:#CCC;margin-bottom:20px;padding:0;}
+/* featured-wrap */
+#featured-wrap{position:relative;width:672px;height:152px;margin:0 auto;}
+#featured-content{overflow:hidden;}
+#featured-content a{float:left;margin:0 5px;}
+#featured-content a img{border:1px solid #888;padding:3px;vertical-align:top;}
+#featured-preview{position:absolute;top:-64px;left:0;z-index:90;display:none;overflow:hidden;width:620px;height:340px;}
+#featured-overlay{position:absolute;top:0;left:0;z-index:100;}
+#featured-overlay div{float:left;cursor:e-resize;background:red;display:none;width:168px;height:158px;}
+</style>
+<script type="text/javascript">
+function showPreview(event) {
+	$("#featured-preview").show();
+};
+
+function hidePreview(event) {
+	$("#featured-preview").hide();
+};
+
+function updatePreview(index) {
+	$("#featured-preview img").hide().eq( index ).show();
+};
+
+function movePreview(event) {
+	var content_position = $("#featured-content").offset();
+
+	$("#featured-preview").css("left", event.pageX - content_position.left - 280);
+};
+
+$(document).ready(function() {
+	var content_els		= $("#featured-content a");
+	var overlay_wrap	= $("#featured-overlay");
+	var overlay_els		= $("div", overlay_wrap)
+
+	overlay_els
+		.css('opacity', 0)
+		.mousemove( movePreview )
+		.mouseenter(function() {
+			updatePreview( overlay_els.index( this ) );
+		})
+		.click(function() {
+			window.location.href = content_els.eq( overlay_els.index( this ) ).attr("href");
+		})
+		.show();
+
+	overlay_wrap
+		.mouseenter( showPreview )
+		.mouseleave( hidePreview );
+
+});
+</script>
+</head>
+<body>
+<div id="content">
+	<h1>滑过图片变大显示效果</h1>
+	<hr />
+
+	<div id="featured-wrap">
+		<div id="featured-content">
+			<a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片放大镜 图片类似放大镜效果鼠标滑过小图异步加载中图、大图" src="images/small598271bc3a3f325a0a1476b1ec18753d.jpg" /></a>
+			<a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片幻灯片 点击小图显示大图异步加载 支持按钮播放" src="images/small9b1ed9dab69a2a969a1aa2ad4bb5a073.jpg" /></a>
+			<a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片放大异步加载图片制作一个简单的jquery 图像预览效果" src="images/smallf2a366c8954d666360c4b214940963cf.jpg" /></a>
+			<a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片放大镜仿苹果视网膜效应的jQuery和CSS" src="images/small761e64dd86a7ebd0919c18d0c04ebabb.jpg" /></a>
+		</div>
+		<div id="featured-preview">
+			<img height="303" width="375" alt="jquery 图片放大镜 图片类似放大镜效果鼠标滑过小图异步加载中图、大图" src="images/598271bc3a3f325a0a1476b1ec18753d.jpg" />
+			<img height="340" width="620" alt="jquery 图片幻灯片 点击小图显示大图异步加载 支持按钮播放" src="images/9b1ed9dab69a2a969a1aa2ad4bb5a073.jpg" />
+			<img height="340" width="620" alt="jquery 图片放大异步加载图片制作一个简单的jquery 图像预览效果" src="images/f2a366c8954d666360c4b214940963cf.jpg" />
+			<img height="340" width="620" alt="jquery 图片放大镜仿苹果视网膜效应的jQuery和CSS" src="images/761e64dd86a7ebd0919c18d0c04ebabb.jpg" />
+		</div>
+		<div id="featured-overlay">
+			<div></div><div></div><div></div><div></div>
+		</div>
+	</div>
+
+</div>
+<center>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>mp3</title>
+
+<link rel="stylesheet" href="css/base.css" /> 
+<link rel="stylesheet" type="text/css" href="css/mp3.css" /> 
+
+<script src="js/jquery-2.1.4.min.js"></script> 
+<script src="js/jaudio.js"></script> 
+
+</head>
+<body>
+ 
+<script type="text/javascript">
+$(function() {
+	play1();
+	play1();
+}) ;
+</script> 
+ 
+<div style="text-align:center;"> 
+	<div class="jAudio--player"> 
+	<audio></audio> 
+		<div class="jAudio--ui"> 
+		<div class="jAudio--thumb" style="display:none;"></div> 
+		<div class="jAudio--status-bar" style="display:none;"></div> 
+		<div class="jAudio--volume-bar" style="display:none;"></div> 
+			<div class="mp3" style="text-align:center;margin-top:-7px;"> 
+			
+				<div class="music_koyguq width_screen margin_auto "> 
+				
+				<div id="jp_container_N" class="player"> 
+					<ul class="e"> 
+					
+						<li><a class="prev" target="_top"  href="javascript:yandurux()"><i class="iconfont"></i></a></li>
+						<li><a class="palse" target="_top"  href="javascript:play1()" style="display: block;"><i class="iconfont" id = "koyguq"></i></a>
+						<li><a class="next" target="_top"  href="javascript:otkuzux()"><i class="iconfont"></i></a></li>
+						<li class="m"><a class="volok" target="_top" href="javascript:awaz_rasim1()"><i class="iconfont" id = "awaz_rasim"></i></a>
+						
+						<li class="vol" style="margin-top:3px;margin-left:4px;">
+						<div class="jAudio--time"> 
+						<span class="jAudio--time-elapsed">00:00</span> 
+						<span class="jAudio--time-total">00:00</span> 
+						
+						</div></li> 
+						<li class="tima"><marquee behavior="alternate" scrollamount="1" scrolldelay="1"><span class="jpinfo"><div class='jAudio--details' ></div></span></marquee></li>
+						<li><a class="down" onClick="jpdown()" target="_top" href="javascript:void(0)"><i class="iconfont"></i></a></li>
+						<li><a class="collection" target="_top" href="javascript:void(0)"><i class="iconfont"></i></a></li>
+						<li><a class="list" target="_top"  href="javascript:uylist()"><i class="iconfont"></i></a></li>
+					
+					</ul> 
+				</div> 
+				<div class="jAudio--progress-bar"> 
+					<div class="jAudio--progress-bar-wrapper"> 
+						<div class="jAudio--progress-bar-played"> 
+							<span class="jAudio--progress-bar-pointer"></span> 
+						</div> 
+					</div> 
+				</div> 
+				
+				</div> 
+			</div> 
+		</div> 
+		<div class="jAudio--playlist" style="display:none;"> </div> 
+		<div class="jAudio--controls" style="position:fixed;bottom:0;left:0;right:0;display:none;"> 
+			<ul> 
+				<li><button class="btn" data-action="prev" id="btn-prev"><span></span></button></li> 
+				<li><button class="btn" data-action="play" id="btn-play"><span></span></button></li> 
+				<li><button class="btn" data-action="next" id="btn-next"><span></span></button></li> 
+			</ul> 
+		</div> 
+	</div> 
+</div> 
+
+<script type="text/javascript">
+	var t = {
+		playlist:[{
+	  file: "http://wx.82ke.com/zxfuli/2067826.m4a",
+	  thumb: "image/2.jpg",
+	  trackName: "“瑞叔” - 【开口即秒】总有一天你会变成你想要的样子",
+	  trackArtist: "- 小月推荐",
+	  trackAlbum: "Single",
+	},{
+	  file: "http://wx.82ke.com/zxfuli/2067620.m4a",
+	  thumb: "image/2.jpg",
+	  trackName: " - DJ瑶瑶【夜电炸弹】这节奏能嗨翻全场听者 - ",
+	  trackArtist: "小月推荐",
+	  trackAlbum: "Single",
+	},{
+	  file: "http://wx.82ke.com/zxfuli/2067804.m4a",
+	  thumb: "image/2.jpg",
+	  trackName: " - 【全网首发】王冕-情面-DJ小帽2017  - ",
+	  trackArtist: "- 小月推荐",
+	  trackAlbum: "Single",
+	},],
+autoPlay:true
+}
+$(".jAudio--player").jAudio(t);
+</script> 
+
+<div id = "kuyux_kunupka" style="display:none;">y</div>
+<div id = "awaz_rasim2" style="display:none;">y</div>
+<div id = "uylist1" style="display:none;">y</div>
+
+<script type = "text/javascript" >
+function uylist()
+{
+     if( document.getElementById("uylist1").innerHTML == "y")
+		 {
+			 document.getElementById("listmp3").style = "height:300px;"
+			 document.getElementById("uylist1").innerHTML = "n"
+     }else{
+             document.getElementById("listmp3").style = "height:45px;"
+			 document.getElementById("uylist1").innerHTML = "y"
+         }
+}
+     function play1()
+	 {   
+	     if( document.getElementById("kuyux_kunupka").innerHTML == "y")
+		 {
+		  document.getElementById("koyguq").innerHTML="";
+	      document.getElementById("btn-pause").click();
+		  document.getElementById("kuyux_kunupka").innerHTML = "n";
+		 }else{
+		  document.getElementById("koyguq").innerHTML="";
+	      document.getElementById("btn-play").click();
+		  document.getElementById("kuyux_kunupka").innerHTML = "y";
+		 }
+	     
+	 }
+	 function awaz_rasim1()
+	 {   
+	     if( document.getElementById("awaz_rasim2").innerHTML == "y")
+		 {
+		  document.getElementById("awaz_rasim").innerHTML="";
+		  document.getElementById("awaz_rasim2").innerHTML = "n";
+		 }else{
+		  document.getElementById("awaz_rasim").innerHTML="";
+		  document.getElementById("awaz_rasim2").innerHTML = "y";
+		 }
+	 }
+	 
+	 function otkuzux()
+	 {  
+	 document.getElementById("btn-next").click();
+	 }
+	 
+	 function yandurux()
+	 {  
+	 document.getElementById("btn-prev").click();
+	 } 
+</script>
+
+</body>
+</html>

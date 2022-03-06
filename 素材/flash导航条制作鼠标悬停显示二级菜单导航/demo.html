@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>flash导航条制作鼠标滑过显示二级菜单目录</title>
+<meta name="description" content="flash二级导航条制作当鼠标滑过显示二级菜单内容，当前频道高亮显示，含flash导航条源码免费下载。" />
+</head>
+
+<body>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+.flashbox{width:800px;height:200px;overflow:hidden;background:#243D42;margin:0 auto;}
+</style>
+
+<div id="flashcontent" class="flashbox"></div>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript">
+var so = new SWFObject("swf/navigation.swf", "focus", "800", "200", "7", "#000000");
+so.addParam("allowFullScreen", "true");
+so.addParam("menu", "false");
+so.addParam("wmode", "transparent");
+so.write("flashcontent");
+</script>
+
+</body>
+</html>
